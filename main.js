@@ -191,7 +191,16 @@ console.log( 'The total number of purchases is:', numPurchases );
   HINT(S):
   - Don't forget that 'purchases' can also be made in 'cash'!
 */
-const numCashSales;
+
+let cashSales = []
+
+transactions.forEach( function(transaction) {
+  if (transaction.type === 'sale' && transaction.paymentMethod === 'cash') {
+    cashSales.push(transaction);
+  }
+});
+
+const numCashSales = cashSales.length
 
 console.log( 'The total number of cash sales is:', numCashSales );
 
