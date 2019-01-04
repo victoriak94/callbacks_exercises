@@ -130,7 +130,15 @@ console.log( 'The total number of transactions is:', totalTransactions );
   HINT(S):
   - Not all transactions are 'sales'.
 */
-const numSales;
+const sales = []
+
+transactions.forEach( function(transaction) {
+  if (transaction.type === 'sale') {
+    sales.push(transaction);
+  }
+});
+
+let numSales = sales.length;
 
 /*
   Hey, welcome to the first question!
@@ -160,7 +168,16 @@ console.log( 'The total number of sales is:', numSales );
 /*
   Calculate the total number of 'purchases'.
 */
-const numPurchases;
+
+let purchases = []
+
+transactions.forEach( function(transaction) {
+  if (transaction.type === 'purchase') {
+    purchases.push(transaction);
+  }
+});
+
+var numPurchases = purchases.length
 
 console.log( 'The total number of purchases is:', numPurchases );
 
